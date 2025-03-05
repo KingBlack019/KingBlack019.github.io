@@ -23,15 +23,15 @@
     </div>
     <div>
         <h2>Contactos</h2>
-        <a href="https://github.com/KingBlack019"><i class="bi bi-github icon"></i></a>
-        <a href="https://www.linkedin.com/in/vicente-marín-suazo-b50ab0249/"><i class="bi bi-linkedin icon"></i></a>
-        <a href="#"><i class="bi bi-telephone icon" onclick="manejarClick()"></i></a>
-        <a href="#"><i class="bi bi-envelope icon" onclick="copiarCorreo()"></i></a>
+        <a href="https://github.com/KingBlack019"><i class="bi bi-github icon m-3"></i></a>
+        <a href="https://www.linkedin.com/in/vicente-marín-suazo-b50ab0249/"><i class="bi bi-linkedin icon m-3"></i></a>
+        <a href="#"><i class="bi bi-telephone icon m-3" onclick="manejarClick()"></i></a>
+        <a href="#"><i class="bi bi-envelope icon m-3" onclick="copiarCorreo()"></i></a>
     </div>
 
     <script>
         const telefono = "+34636825812";
-        function manejarClic(event) {
+        function manejarClick(event) {
             if (esMovil()) {
                 document.getElementById("phone-link").href = "tel:" + telefono;
             } else {
