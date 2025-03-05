@@ -25,8 +25,8 @@
         <h2>Contactos</h2>
         <a href="https://github.com/KingBlack019"><i class="bi bi-github icon m-3"></i></a>
         <a href="https://www.linkedin.com/in/vicente-marín-suazo-b50ab0249/"><i class="bi bi-linkedin icon m-3"></i></a>
-        <a href="#"><i class="bi bi-telephone icon m-3" onclick="manejarClick()"></i></a>
-        <a href="#"><i class="bi bi-envelope icon m-3" onclick="copiarCorreo()"></i></a>
+        <a href=""><i class="bi bi-telephone icon m-3" onclick="manejarClick()"></i></a>
+        <a href=""><i class="bi bi-envelope icon m-3" onclick="copiarCorreo()"></i></a>
     </div>
 
     <script>
@@ -43,15 +43,13 @@
         function copiarTelefono(){
             navigator.clipboard.writeText(telefono).then(() => {
                 const mensaje = document.getElementById("mensaje");
-                mensaje.style.display = "block";}, 2000)
-                .catch(err => console.error("Error al copiar: ", err));
+                mensaje.style.display = "block";}, 2000);
         }
         function copiarCorreo(){
             const correo = "vicente.marin013@gmail.com";
             navigator.clipboard.writeText(correo).then(() => {
                 const mensaje = document.getElementById("mensaje");
-                mensaje.style.display = "block";}, 2000)
-                .catch(err => console.error("Error al copiar: ", err));
+                mensaje.style.display = "block";}, 2000);
         }
 
         function esMovil() {
