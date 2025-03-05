@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
   </head>
-    <title>Document</title>
+    <title>Vicente</title>
 </head>
 <body>
     <div>
@@ -25,24 +25,37 @@
         <h2>Contactos</h2>
         <a href="https://github.com/KingBlack019"><i class="bi bi-github icon"></i></a>
         <a href="https://www.linkedin.com/in/vicente-marín-suazo-b50ab0249/"><i class="bi bi-linkedin icon"></i></a>
-        <i class="bi bi-telephone icon" onclick="copiarTelefono()"></i>
-        <i class="bi bi-envelope icon" onclick="copiarCorreo()"></i>
+        <a href="#"><i class="bi bi-telephone icon" onclick="manejarClick()"></i></a>
+        <a href="#"><i class="bi bi-envelope icon" onclick="copiarCorreo()"></i></a>
     </div>
 
     <script>
+        const telefono = "+34636825812";
+        function manejarClic(event) {
+            if (esMovil()) {
+                document.getElementById("phone-link").href = "tel:" + telefono;
+            } else {
+                event.preventDefault();
+                copiarTelefono();
+            }
+        }
+
         function copiarTelefono(){
-            const telefono = "+34636825812";
             navigator.clipboard.writeText(telefono).then(() => {
                 const mensaje = document.getElementById("mensaje");
-                mensaje.style.display = "none";}, 2000)
+                mensaje.style.display = "block";}, 2000)
                 .catch(err => console.error("Error al copiar: ", err));
         }
         function copiarCorreo(){
             const correo = "vicente.marin013@gmail.com";
             navigator.clipboard.writeText(correo).then(() => {
                 const mensaje = document.getElementById("mensaje");
-                mensaje.style.display = "none";}, 2000)
+                mensaje.style.display = "block";}, 2000)
                 .catch(err => console.error("Error al copiar: ", err));
+        }
+
+        function esMovil() {
+            return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
         }
     </script>
 </body>
