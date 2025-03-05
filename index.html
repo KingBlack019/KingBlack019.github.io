@@ -23,9 +23,27 @@
     </div>
     <div>
         <h2>Contactos</h2>
-        <a><i class="bi bi-github"></i></a>
-        <a><i class="bi bi-linkedin"></i></a>
-        <a><i class="bi bi-telephone"></i></a>
+        <a href="https://github.com/KingBlack019"><i class="bi bi-github icon"></i></a>
+        <a href="https://www.linkedin.com/in/vicente-marín-suazo-b50ab0249/"><i class="bi bi-linkedin icon"></i></a>
+        <i class="bi bi-telephone icon" onclick="copiarTelefono()"></i>
+        <i class="bi bi-envelope icon" onclick="copiarCorreo()"></i>
     </div>
+
+    <script>
+        function copiarTelefono(){
+            const telefono = "+34636825812";
+            navigator.clipboard.writeText(telefono).then(() => {
+                const mensaje = document.getElementById("mensaje");
+                mensaje.style.display = "none";}, 2000)
+                .catch(err => console.error("Error al copiar: ", err));
+        }
+        function copiarCorreo(){
+            const correo = "vicente.marin013@gmail.com";
+            navigator.clipboard.writeText(correo).then(() => {
+                const mensaje = document.getElementById("mensaje");
+                mensaje.style.display = "none";}, 2000)
+                .catch(err => console.error("Error al copiar: ", err));
+        }
+    </script>
 </body>
 </html>
